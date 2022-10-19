@@ -1,13 +1,39 @@
-import { Appbar } from "./pages/layout/Navbar"
-import { Box } from "@mui/material"
+import { IntroSection } from "./sections"
+import { SectionIdEnum } from "./types"
+import { Layout } from "./components"
+import { Appbar } from "./components/Navbar"
 
-function App() {
+const sections = [
+  {
+    sectionId: SectionIdEnum.intro,
+    component: <IntroSection />,
+  },
+  // {
+  //   sectionId: SectionIdEnum.about,
+  //   component: <AboutSection />,
+  // },
+  // {
+  //   sectionId: SectionIdEnum.projects,
+  //   component: <ProjectsSection />,
+  // },
+  // {
+  //   sectionId: SectionIdEnum.contact,
+  //   component: <ContactSection />,
+  // },
+  // {
+  //   sectionId: SectionIdEnum.skills,
+  //   component: <SkillsSection />,
+  // },
+]
+
+const App: React.FC = () => {
   return (
-    <>
-      <Box>
-        <Appbar />
-      </Box>
-    </>
+    <Layout>
+      <Appbar />
+      {sections.map(({ component }) => {
+        return component
+      })}
+    </Layout>
   )
 }
 
