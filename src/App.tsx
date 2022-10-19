@@ -1,7 +1,14 @@
+import { Appbar } from "./pages/layout/Navbar"
 import { Box } from "@mui/material"
 
 function App() {
-  return <Box>Multipe project</Box>
+  return (
+    <>
+      <Box>
+        <Appbar />
+      </Box>
+    </>
+  )
 }
 
 export default App
